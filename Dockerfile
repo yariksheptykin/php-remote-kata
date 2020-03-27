@@ -8,7 +8,11 @@ RUN set -eux; \
     \
     docker-php-ext-install xml; \
     pecl install xdebug-2.9.4; \
-    docker-php-ext-enable xml xdebug;
+    docker-php-ext-enable xml xdebug; \
+    \
+    mkdir /app;
 
-COPY --from=composer /usr/bin/composer /user/bin/composer
+WORKDIR /app
+
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 

@@ -12,4 +12,5 @@
 
 * `git clone https://gitlab.neusta.de/oroessner/remote-php-kata.git`
 * `docker-compose build`
+* `docker-compose run php composer install`
 * Open project in PhpStorm
