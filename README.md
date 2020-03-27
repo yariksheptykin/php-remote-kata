@@ -4,7 +4,8 @@
 
 * git
 * docker
-* PhpStorm
+* (Windows) Share Docker Daemon via TCP (Docker for Windows Settings -> General)
+* PhpStorm with working Docker connection configured.
 * some remote screensharing tool, e.g. meet.jit.si or similar.
 
 ## Installation
