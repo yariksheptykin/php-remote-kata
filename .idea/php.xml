@@ -37,7 +37,7 @@
   </component>
   <component name="PhpInterpreters">
     <interpreters>
-      <interpreter id="90cfaf2e-7851-451d-a9be-03efbbf03add" name="php" home="docker-compose://DATA" debugger_id="php.debugger.XDebug">
+      <interpreter id="90cfaf2e-7851-451d-a9be-03efbbf03add" name="php-kata" home="docker-compose://DATA" debugger_id="php.debugger.XDebug">
         <remote_data DOCKER_ACCOUNT_NAME="Docker" DOCKER_COMPOSE_SERVICE_NAME="php" DOCKER_REMOTE_PROJECT_PATH="/opt/project" INTERPRETER_PATH="php" HELPERS_PATH="/opt/.phpstorm_helpers" INITIALIZED="false" VALID="true" RUN_AS_ROOT_VIA_SUDO="false">
           <dockerComposeConfigurationPaths>
             <item value="$PROJECT_DIR$/docker-compose.yaml" />
@@ -50,8 +50,8 @@
   </component>
   <component name="PhpInterpretersPhpInfoCache">
     <phpInfoCache>
-      <interpreter name="php">
-        <phpinfo binary_type="PHP" php_cgi="/usr/local/bin/php-cgi" php_cli="/usr/local/bin/php" path_separator=":" version="7.4.0">
+      <interpreter name="php-kata">
+        <phpinfo binary_type="PHP" php_cgi="/usr/local/bin/php-cgi" php_cli="/usr/local/bin/php" path_separator=":" version="7.4.4">
           <additional_php_ini>/usr/local/etc/php/conf.d/docker-php-ext-sodium.ini, /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini</additional_php_ini>
           <configuration_file />
           <configuration_options>
