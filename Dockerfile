@@ -1,18 +1,17 @@
 FROM php:7.4.4-cli-alpine
 
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
 RUN set -eux; \
+    mkdir /app; \
     \
     apk update; \
     apk upgrade; \
-    apk add --no-cache build-base autoconf libxml2-dev; \
+    apk add --no-cache --virtual .build-deps build-base autoconf; \
     \
-    docker-php-ext-install xml; \
     pecl install xdebug-2.9.4; \
-    docker-php-ext-enable xml xdebug; \
+    docker-php-ext-enable xdebug; \
     \
-    mkdir /app;
+    apk del --no-network .build-deps;
 
 WORKDIR /app
-
-COPY --from=composer /usr/bin/composer /usr/bin/composer
-
