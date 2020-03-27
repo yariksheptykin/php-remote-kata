@@ -30,3 +30,7 @@ Following [Remote Mob Programming](https://www.remotemobprogramming.org/#git-han
    * PhpStorm: `Ctrl + K`, Commit message doesn't matter, Submit dialog with `Ctrl + Alt + K` (Commit & Push)
 9. \[\[ Repeat step 2-6 until done \]\]
 10. Delete the local and remote `kata` branch: `git branch -D kata` and `git branch -D origin/kata`.
+
+## No PhpStorm, No Problem!
+
+You can run tests directly via docker-compose: `docker-compose run php vendor/bin/phpunit`
