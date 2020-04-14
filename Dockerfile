@@ -14,4 +14,6 @@ RUN set -eux; \
     \
     apk del --no-network .build-deps;
 
+COPY php.ini /usr/local/etc/php/
+
 WORKDIR /app
