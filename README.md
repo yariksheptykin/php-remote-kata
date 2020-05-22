@@ -15,6 +15,46 @@
 * `docker-compose run php composer install`
 * Open project in PhpStorm
 
+## PhpStorm Setup
+
+* File | Settings | Languages & Frameworks | PHP -> Add Docker-Compose interpreter
+  
+  ![File | Settings | Languages & Frameworks | PHP](.manual/settings-interpreter.png)
+  
+  * Click the tiny `+` in the upper left and select "From Docker, vagrant, VM..."
+  
+    ![Add Interpreter](./.manual/add-interpreter-docker.png)
+    
+  * Choose "Docker Compose" and choose the following settings:
+    
+    ![Docker Compose Settings](.manual/docker-compose-interpreter.png)
+    
+* File | Settings | Languages & Frameworks | PHP should look like this:
+  
+  ![Correct Interpreter Settings](.manual/interpreter-correct.png)
+  
+* File | Settings | Languages & Frameworks | PHP | Composer -> Configure Composer  
+  * Enable Composer Settings Sync
+  * Choose Composer by Remote Interpreter
+  * Choose your Docker-Compose interpreter you've just configured.
+  
+  ![Composer Settings](.manual/composer-settings.png)
+  
+* File | Settings | Languages & Frameworks | PHP | Test Frameworks -> Setup PhpUnit Integration
+  * Click the tiny `+` in the upper left and select "PHPUnit by Remote Interpreter"
+    
+    ![PHPUnit Remote Interpreter](.manual/phpunit-remote-interpreter.png)
+
+  * Choose your Docker-Compose interpreter you've just configured.
+    
+    ![Choose PHPUnit Remote interpreter](.manual/phpunit-interpreter-selection.png)
+  
+  * After a moment the screen should look like this, automatically:
+    
+    ![PhpUnit Integration correct](.manual/phpunit-correct.png)
+  
+* Right click [phpunit.xml](./phpunit.xml) in the Project Browser and select "Run 'phpunit.xml (PHPUnit)'", and you're good to go! 
+  
 ## Workflow
 
 Following [Remote Mob Programming](https://www.remotemobprogramming.org/#git-handover):

@@ -2,7 +2,7 @@
   "name": "oroessner/remote-php-kata",
   "type": "project",
   "require": {
-    "php": "^7.4.0"
+    "php": ">=7.4.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.0"
