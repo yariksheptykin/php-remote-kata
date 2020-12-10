@@ -1,7 +1,12 @@
 version: '3.4'
 services:
   php:
+    image: "docker-repository.intern.neusta.de/php/kata:8.0"
     build:
       context: .
     volumes:
     - ./:/app
+    environment:
+      XDEBUG_MODE: debug
+    expose:
+      - 9003 # xdebug 3 port!

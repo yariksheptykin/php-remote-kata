@@ -1,0 +1,15 @@
+build-and-push:
+  stage: build
+  tags:
+    - docker
+  only:
+    - php-8
+    - master
+  variables:
+    IMAGE_TAG: "8.0"
+  before_script:
+    - docker login -u ${NSD_REGISTRY_USER} -p "${NSD_REGISTRY_PW}" docker-repository.intern.neusta.de:18443
+    - docker login -u ${NSD_REGISTRY_USER} -p "${NSD_REGISTRY_PW}" docker-repository.intern.neusta.de
+  script:
+    - docker build -t "docker-repository.intern.neusta.de:18443/php/kata:$IMAGE_TAG" .
+    - docker push "docker-repository.intern.neusta.de:18443/php/kata:$IMAGE_TAG"
