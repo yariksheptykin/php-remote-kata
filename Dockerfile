@@ -1,18 +1,11 @@
-FROM php:cli-alpine
+FROM docker-repository.intern.neusta.de/php:8-cli-alpine
 
-COPY --from=composer /usr/bin/composer /usr/bin/composer
+COPY --from=docker-repository.intern.neusta.de/mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
+COPY --from=docker-repository.intern.neusta.de/composer /usr/bin/composer /usr/bin/composer
 
 RUN set -eux; \
     mkdir /app; \
-    \
-    apk update; \
-    apk upgrade; \
-    apk add --no-cache --virtual .build-deps build-base autoconf; \
-    \
-    pecl install xdebug-2.9.4; \
-    docker-php-ext-enable xdebug; \
-    \
-    apk del --no-network .build-deps;
+    install-php-extensions xdebug;
 
 COPY php.ini /usr/local/etc/php/
 
