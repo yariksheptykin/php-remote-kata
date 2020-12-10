@@ -2,7 +2,7 @@
 
 Update 10.12.2020:
 
-The main branch is PHP 8.0 now. There is a legacy 7.4 branch and tag, if you need/want to works with php 7.4.
+The main branch is PHP 8.0 now. There is a legacy 7.4 branch and tag, if you need/want to work with php 7.4.
 
 ## Requirements
 
