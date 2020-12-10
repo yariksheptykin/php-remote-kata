@@ -3,7 +3,7 @@ build-and-push:
   tags:
     - docker
   only:
-    - master
+    - main
   variables:
     IMAGE_TAG: "8.0"
   before_script:
