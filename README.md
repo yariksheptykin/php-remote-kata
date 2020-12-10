@@ -1,8 +1,12 @@
 # Remote PHP Kata
 
-Update 10.12.2020:
+## Changelog
 
-The main branch is PHP 8.0 now. There is a legacy 7.4 branch and tag, if you need/want to work with php 7.4.
+### 10.12.2020:
+
+* `master` branch has been renamed to `main`. 
+* The main branch is PHP 8.0 now. 
+* There is a legacy 7.4 branch and tag, if you still need/want to work with PHP 7.4.
 
 ## Requirements
 
