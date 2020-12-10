@@ -3,7 +3,6 @@ build-and-push:
   tags:
     - docker
   only:
-    - php-8
     - master
   variables:
     IMAGE_TAG: "8.0"
