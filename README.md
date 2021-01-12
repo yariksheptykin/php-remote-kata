@@ -25,28 +25,69 @@
 
 ## PhpStorm Setup
 
-* File | Settings | Languages & Frameworks | PHP -> Add Docker-Compose interpreter
-  
-  ![File | Settings | Languages & Frameworks | PHP](.manual/settings-interpreter.png)
-  
-  * Click the tiny `+` in the upper left and select "From Docker, vagrant, VM..."
-  
-    ![Add Interpreter](./.manual/add-interpreter-docker.png)
-    
-  * Choose "Docker Compose" and choose the following settings:
-    
-    ![Docker Compose Settings](.manual/docker-compose-interpreter.png)
-    
+Hier wird etwas in der Konfiguration unterschieden, ob mit 
+* Version 7  
+
+bzw.
+
+* Version 8
+
+gearbeitet werden soll.
+
+### Version 7.*
+
+  * File -> Settings -> Languages & Frameworks -> PHP -> Add Docker-Compose interpreter
+
+![File - Settings - Languages & Frameworks - PHP](.manual/settings-interpreter.png)
+
+* Click the tiny `+` in the upper left and select "From Docker, vagrant, VM..."
+
+  ![Add Interpreter](./.manual/add-interpreter-docker.png)
+
+* Choose "Docker Compose" and choose the following settings:
+
+  ![Docker Compose Settings](.manual/docker-compose-interpreter.png)
+
+* File | Settings | Languages & Frameworks | PHP should look like this:
+
+  ![Correct Interpreter Settings](.manual/interpreter-correct.png)
+
+* File | Settings | Languages & Frameworks | PHP | Composer -> Configure Composer
+  * Enable Composer Settings Sync
+  * Choose Composer by Remote Interpreter
+  * Choose your Docker-Compose interpreter you've just configured.
+
+  ![Composer Settings](.manual/composer-settings.png)
+
+* File | Settings | Languages & Frameworks | PHP | Test Frameworks -> Setup PhpUnit Integration
+  * Click the tiny `+` in the upper left and select "PHPUnit by Remote Interpreter"
+
+    ![PHPUnit Remote Interpreter](.manual/phpunit-remote-interpreter.png)
+
+  * Choose your Docker-Compose interpreter you've just configured.
+
+    ![Choose PHPUnit Remote interpreter](.manual/phpunit-interpreter-selection.png)
+
+  * After a moment the screen should look like this, automatically:
+
+    ![PhpUnit Integration correct](.manual/phpunit-correct.png)
+
+### Version 8.*  
+
+  * File -> Settings -> Languages & Frameworks -> PHP -> Add Docker interpreter (Otherwise I could not determine the correct PHPUnit version later)
+
+![File - Settings - Languages & Frameworks - PHP](.manual/settings-interpreter-v8.png)
+
 * File | Settings | Languages & Frameworks | PHP should look like this:
   
-  ![Correct Interpreter Settings](.manual/interpreter-correct.png)
+  ![Correct Interpreter Settings](.manual/interpreter-correct-v8.png)
   
 * File | Settings | Languages & Frameworks | PHP | Composer -> Configure Composer  
   * Enable Composer Settings Sync
   * Choose Composer by Remote Interpreter
   * Choose your Docker-Compose interpreter you've just configured.
   
-  ![Composer Settings](.manual/composer-settings.png)
+  ![Composer Settings](.manual/composer-settings-v8.png)
   
 * File | Settings | Languages & Frameworks | PHP | Test Frameworks -> Setup PhpUnit Integration
   * Click the tiny `+` in the upper left and select "PHPUnit by Remote Interpreter"
@@ -55,11 +96,11 @@
 
   * Choose your Docker-Compose interpreter you've just configured.
     
-    ![Choose PHPUnit Remote interpreter](.manual/phpunit-interpreter-selection.png)
+    ![Choose PHPUnit Remote interpreter](.manual/phpunit-interpreter-selection-v8.png)
   
   * After a moment the screen should look like this, automatically:
     
-    ![PhpUnit Integration correct](.manual/phpunit-correct.png)
+    ![PhpUnit Integration correct](.manual/phpunit-correct-v8.png)
   
 * Right click [phpunit.xml](./phpunit.xml) in the Project Browser and select "Run 'phpunit.xml (PHPUnit)'", and you're good to go! 
   
