@@ -14,7 +14,7 @@
 * docker
 * (Windows) Share Docker Daemon via TCP (Docker for Windows Settings -> General)
 * PhpStorm with working Docker connection configured.
-* some remote screensharing tool, e.g. meet.jit.si or similar.
+* some remote screensharing tool, e.g. MS Teams or similar.
 
 ## Installation
 
@@ -25,58 +25,15 @@
 
 ## PhpStorm Setup
 
-Hier wird etwas in der Konfiguration unterschieden, ob mit 
-* Version 7  
+### PHP 8.*  
 
-bzw.
+* File -> Settings -> Languages & Frameworks -> PHP -> Add Docker-Compose interpreter
 
-* Version 8
+  ![File - Settings - Languages & Frameworks - PHP](.manual/remote-interpreter-docker-compose.png)
 
-gearbeitet werden soll.
+* Choose "Connect to existing container ('docker-compose exec')", which is a lot faster than spinning up a new container each time.
 
-### Version 7.*
-
-  * File -> Settings -> Languages & Frameworks -> PHP -> Add Docker-Compose interpreter
-
-![File - Settings - Languages & Frameworks - PHP](.manual/settings-interpreter.png)
-
-* Click the tiny `+` in the upper left and select "From Docker, vagrant, VM..."
-
-  ![Add Interpreter](./.manual/add-interpreter-docker.png)
-
-* Choose "Docker Compose" and choose the following settings:
-
-  ![Docker Compose Settings](.manual/docker-compose-interpreter.png)
-
-* File | Settings | Languages & Frameworks | PHP should look like this:
-
-  ![Correct Interpreter Settings](.manual/interpreter-correct.png)
-
-* File | Settings | Languages & Frameworks | PHP | Composer -> Configure Composer
-  * Enable Composer Settings Sync
-  * Choose Composer by Remote Interpreter
-  * Choose your Docker-Compose interpreter you've just configured.
-
-  ![Composer Settings](.manual/composer-settings.png)
-
-* File | Settings | Languages & Frameworks | PHP | Test Frameworks -> Setup PhpUnit Integration
-  * Click the tiny `+` in the upper left and select "PHPUnit by Remote Interpreter"
-
-    ![PHPUnit Remote Interpreter](.manual/phpunit-remote-interpreter.png)
-
-  * Choose your Docker-Compose interpreter you've just configured.
-
-    ![Choose PHPUnit Remote interpreter](.manual/phpunit-interpreter-selection.png)
-
-  * After a moment the screen should look like this, automatically:
-
-    ![PhpUnit Integration correct](.manual/phpunit-correct.png)
-
-### Version 8.*  
-
-  * File -> Settings -> Languages & Frameworks -> PHP -> Add Docker interpreter (Otherwise I could not determine the correct PHPUnit version later)
-
-![File - Settings - Languages & Frameworks - PHP](.manual/settings-interpreter-v8.png)
+  ![PHP 8 Docker-Compose interpreter](.manual/interpreter-v8-full.png)
 
 * File | Settings | Languages & Frameworks | PHP should look like this:
   
@@ -122,4 +79,7 @@ Following [Remote Mob Programming](https://www.remotemobprogramming.org/#git-han
 
 ## No PhpStorm, No Problem!
 
-You can run tests directly via docker-compose: `docker-compose run php vendor/bin/phpunit`
+* You can run tests directly via docker-compose: `docker-compose run php vendor/bin/phpunit`
+   * Linux: `./bin/phpunit`
+* You can use the composer inside the docker-container, to avoid permission issues: `docker-compose run php /usr/bin/composer`
+   * Linux:  `./bin/composer`
