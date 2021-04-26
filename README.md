@@ -20,7 +20,9 @@
 
 * `git clone https://gitlab.neusta.de/nsd-intern/remote-php-kata.git`
 * `docker-compose build`
-* `docker-compose run php composer install`
+* Composer install
+  * Linux: `./bin/composer install`
+  * Windows: `docker-compose run --no-deps --rm php composer install`
 * Open project in PhpStorm
 
 ## PhpStorm Setup
