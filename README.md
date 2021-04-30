@@ -32,9 +32,9 @@
 * File -> Settings -> Languages & Frameworks -> PHP -> Add Docker-Compose interpreter
 
   ![File - Settings - Languages & Frameworks - PHP](.manual/remote-interpreter-docker-compose.png)
-
-* Choose "Connect to existing container ('docker-compose exec')", which is a lot faster than spinning up a new container each time.
-
+  
+  Result should look like this:
+  
   ![PHP 8 Docker-Compose interpreter](.manual/interpreter-v8-full.png)
 
 * File | Settings | Languages & Frameworks | PHP should look like this:
