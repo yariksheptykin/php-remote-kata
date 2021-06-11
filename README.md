@@ -63,6 +63,29 @@
   
 * Right click [phpunit.xml](./phpunit.xml) in the Project Browser and select "Run 'phpunit.xml (PHPUnit)'", and you're good to go! 
   
+## New Workflow with Mob Plugin
+
+### Prerequisites
+1. Get the [Mob Plugin](https://plugins.jetbrains.com/plugin/14266-mob)
+2. Set it up:
+   ![Settings](.manual/mob-settings.png)
+3. Create a new base branch for your Coding Kata/Dojo.   
+e.g. 2021-06-11/coding-dojo
+4. Checkout this branch locally
+
+### Flow
+Based upon these steps:
+1. Meet online. Everyone activates his/her camera.
+2. First coder shares his/her screen/IDE
+3. Start Mob as Typeist: Alt+M,S and determine the timebox (e.g. 7 minutes)   
+3. Do your TDD cycles until timer has finished (Watch dialogue box)
+4. Do Mob Next: Alt+M,N
+5. Unshare your screen
+Next one can go on...
+
+At the end of the Dojo choose Mob Done instead of Next: Alt+M,D
+WIP Branch will be merged with base branch with a finished commit message of all participants.
+
 ## Workflow
 
 Following [Remote Mob Programming](https://www.remotemobprogramming.org/#git-handover):
