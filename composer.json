@@ -2,9 +2,10 @@
   "name": "oroessner/remote-php-kata",
   "type": "project",
   "require": {
-    "php": ">=8.0",
+    "php": ">=8.1",
     "phpunit/phpunit": "^9.5",
-    "phpspec/prophecy-phpunit": "^2.0"
+    "phpspec/prophecy-phpunit": "^2.0",
+    "jetbrains/phpstorm-attributes": "^1.0"
   },
   "license": "MIT",
   "authors": [
