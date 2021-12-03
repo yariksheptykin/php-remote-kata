@@ -2,13 +2,22 @@ build-and-push:
   stage: build
   tags:
     - docker
+    - omega
   only:
     - main
+  image: docker-repository.intern.neusta.de/tn-buildx
   variables:
-    IMAGE_TAG: "8.0"
+    IMAGE_TAG: "8.1"
+    DOCKER_BUILDKIT: 1
+    DOCKER_DRIVER: overlay2
+    BUILDER_NAME: multiarch-$CI_JOB_ID
   before_script:
-    - docker login -u ${NSD_REGISTRY_USER} -p "${NSD_REGISTRY_PW}" docker-repository.intern.neusta.de:18443
-    - docker login -u ${NSD_REGISTRY_USER} -p "${NSD_REGISTRY_PW}" docker-repository.intern.neusta.de
+    - docker version
+    # this is a bit of an inception, because building this image automatically, needs this image as a builder ;)
+    - docker buildx create --name "${BUILDER_NAME}" --driver docker-container --driver-opt image=docker-repository.intern.neusta.de/tn-buildkit --use
+    - docker buildx inspect --bootstrap
+    - update-binfmts --enable
+  after_script:
+    - docker buildx rm "${BUILDER_NAME}"
   script:
-    - docker build -t "docker-repository.intern.neusta.de:18443/php/kata:$IMAGE_TAG" .
-    - docker push "docker-repository.intern.neusta.de:18443/php/kata:$IMAGE_TAG"
+    - sh ./build.sh
