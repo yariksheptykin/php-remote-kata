@@ -2,6 +2,11 @@
 
 ## Changelog
 
+### 03.12.2021:
+
+* The main branch is PHP 8.1 now.
+* Added [.editorconfig](.editorconfig), mainly to avoid line-ending issues between different operating-systems (All Jetbrains IDEs and VS Code support it out-of-the-box).
+
 ### 10.12.2020:
 
 * `master` branch has been renamed to `main`. 
