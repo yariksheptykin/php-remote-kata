@@ -19,6 +19,8 @@ trim_trailing_whitespace = false
 
 [*.php]
 indent_size = 4
+# we set this to true, otherwise HEREDOCS/NOWDOCS are affected, as well.
+trim_trailing_whitespace = false
 
 [*.sh]
 indent_style = tab
