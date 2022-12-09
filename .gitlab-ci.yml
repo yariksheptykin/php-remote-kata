@@ -7,7 +7,7 @@ build-and-push:
     - main
   image: docker-repository.intern.neusta.de/tn-buildx
   variables:
-    IMAGE_TAG: "8.1"
+    IMAGE_TAG: "8.2"
     DOCKER_BUILDKIT: 1
     DOCKER_DRIVER: overlay2
     BUILDER_NAME: multiarch-$CI_JOB_ID

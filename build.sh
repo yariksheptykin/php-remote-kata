@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-image_tag=${IMAGE_TAG:-"8.1"}
+image_tag=${IMAGE_TAG:-"8.2"}
 architecture=$(arch)
 image=docker-repository.intern.neusta.de:18443/php/kata:${image_tag}
 
