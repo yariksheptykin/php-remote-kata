@@ -2,6 +2,11 @@
 
 ## Changelog
 
+### 09.12.2022:
+
+* The main branch is PHP 8.2 now.
+  * The image can be pulled from docker-repository.intern.neusta.de/php/kata:8.2
+
 ### 10.12.2021:
 
 * The Docker setup doesn't rely on the neusta Docker registry anymore. By copying [.env.dist](.env.dist) to `.env` and
@@ -10,6 +15,7 @@
 ### 03.12.2021:
 
 * The main branch is PHP 8.1 now.
+  * The image can be pulled from docker-repository.intern.neusta.de/php/kata:8.1
 * Added [.editorconfig](.editorconfig), mainly to avoid line-ending issues between different operating-systems (All
   Jetbrains IDEs and VS Code support it out-of-the-box).
 
