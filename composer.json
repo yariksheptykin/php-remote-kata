@@ -1,28 +1,30 @@
 {
-  "name": "oroessner/remote-php-kata",
-  "type": "project",
-  "require": {
-    "php": ">=8.1",
-    "phpunit/phpunit": "^9.5",
-    "phpspec/prophecy-phpunit": "^2.0",
-    "jetbrains/phpstorm-attributes": "^1.0"
-  },
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Ole Rößner",
-      "email": "o.roessner@neusta.de"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "Kata\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Kata\\Tests\\": "tests/"
-    }
-  },
-  "minimum-stability": "stable"
+    "name": "oroessner/remote-php-kata",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "jetbrains/phpstorm-attributes": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "phpspec/prophecy-phpunit": "^2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ole Rößner",
+            "email": "o.roessner@neusta.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kata\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kata\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable"
 }
