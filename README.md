@@ -2,6 +2,14 @@
 
 ## Changelog
 
+### 23.12.2022
+
+The image has been published to [Dockerhub](https://hub.docker.com/r/teamneusta/remote-php-kata). No need for a local build anymore.
+
+The image tag on the [`docker-compose.yaml`](./docker-compose.yaml#L4) still points to the image proxied by the internal neusta Docker Registry, but it can easily be overwritten, by copying [.env.dist](.env.dist) to `.env`
+
+`cp .env.dist .env`
+
 ### 09.12.2022:
 
 * The main branch is PHP 8.2 now.

@@ -7,16 +7,17 @@ build-and-push:
     - main
   image: docker-repository.intern.neusta.de/tn-buildx
   variables:
+    IMAGE_NAME: "teamneusta/remote-php-kata"
     IMAGE_TAG: "8.2"
     DOCKER_BUILDKIT: 1
     DOCKER_DRIVER: overlay2
     BUILDER_NAME: multiarch-$CI_JOB_ID
   before_script:
     - docker version
-    # this is a bit of an inception, because building this image automatically, needs this image as a builder ;)
     - docker buildx create --name "${BUILDER_NAME}" --driver docker-container --driver-opt image=docker-repository.intern.neusta.de/tn-buildkit --use
     - docker buildx inspect --bootstrap
     - update-binfmts --enable
+    - docker login -u "${DOCKERHUB_USER}" -p "${DOCKERHUB_ACCESS_TOKEN}"
   after_script:
     - docker buildx rm "${BUILDER_NAME}"
   script:
