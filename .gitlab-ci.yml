@@ -17,7 +17,7 @@ build-and-push:
     - docker buildx create --name "${BUILDER_NAME}" --driver docker-container --driver-opt image=docker-repository.intern.neusta.de/tn-buildkit --use
     - docker buildx inspect --bootstrap
     - update-binfmts --enable
-    - docker login -u "${DOCKERHUB_USER}" -p "${DOCKERHUB_ACCESS_TOKEN}"
+    - cat "${DOCKERHUB_ACCESS_TOKEN}" | docker login --username "${DOCKERHUB_USER}" --password-stdin
   after_script:
     - docker buildx rm "${BUILDER_NAME}"
   script:
