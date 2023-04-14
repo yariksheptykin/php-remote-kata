@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+set -eux;
+
 image_name=${IMAGE_NAME:-"docker-repository.intern.neusta.de:18443/php/kata"}
 image_tag=${IMAGE_TAG:-"8.2"}
 architecture=$(arch)
