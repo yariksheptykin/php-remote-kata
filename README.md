@@ -2,6 +2,10 @@
 
 ## Changelog
 
+### 10.11.2023
+
+Drop support for docker compose v1 (docker-compose) and use docker compose v2 (docker compose).
+
 ### 23.12.2022
 
 The image has been published to [Dockerhub](https://hub.docker.com/r/teamneusta/remote-php-kata). No need for a local build anymore.
@@ -44,10 +48,10 @@ The image tag on the [`docker-compose.yaml`](./docker-compose.yaml#L4) still poi
 ## Installation
 
 * `git clone https://gitlab.neusta.de/nsd-intern/remote-php-kata.git`
-* `docker-compose build`
+* `docker compose build`
 * Composer install
   * Linux: `./bin/composer install`
-  * Windows: `docker-compose run --no-deps --rm php composer install`
+  * Windows: `docker compose run --no-deps --rm php composer install`
 * Open project in PhpStorm
 
 ## PhpStorm Setup
@@ -107,9 +111,9 @@ Based upon these steps:
 1. Meet online. Everyone activates his/her camera.
 2. First coder shares his/her screen/IDE
 3. Start Mob as Typeist: Alt+M,S and determine the timebox (e.g. 7 minutes)
-3. Do your TDD cycles until timer has finished (Watch dialogue box)
-4. Do Mob Next: Alt+M,N
-5. Unshare your screen Next one can go on...
+4. Do your TDD cycles until timer has finished (Watch dialogue box)
+5. Do Mob Next: Alt+M,N
+6. Unshare your screen Next one can go on...
 
 At the end of the Dojo choose Mob Done instead of Next: Alt+M,D WIP Branch will be merged with base branch with a
 finished commit message of all participants.
@@ -132,8 +136,8 @@ Following [Remote Mob Programming](https://www.remotemobprogramming.org/#git-han
 
 ## No PhpStorm, No Problem!
 
-* You can run tests directly via docker-compose: `docker-compose run php vendor/bin/phpunit`
+* You can run tests directly via docker compose: `docker compose run php vendor/bin/phpunit`
   * Linux: `./bin/phpunit`
 * You can use the composer inside the docker-container, to avoid permission
-  issues: `docker-compose run php /usr/bin/composer`
+  issues: `docker compose run php /usr/bin/composer`
   * Linux:  `./bin/composer`
