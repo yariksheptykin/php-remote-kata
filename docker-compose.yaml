@@ -1,6 +1,6 @@
 services:
   php:
-    image: "${KATA_DOCKER_REGISTRY:-docker-repository.intern.neusta.de}/teamneusta/remote-php-kata:8.2"
+    image: "${KATA_DOCKER_REGISTRY:-docker-repository.intern.neusta.de}/teamneusta/remote-php-kata:8.3"
     volumes:
     - ./:/app
     environment:
