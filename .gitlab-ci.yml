@@ -8,7 +8,7 @@ build-and-push:
     image: docker-repository.intern.neusta.de/tn-buildx
     variables:
         IMAGE_NAME: "teamneusta/remote-php-kata"
-        IMAGE_TAG: "8.2"
+        IMAGE_TAG: "8.3"
         DOCKER_BUILDKIT: 1
         DOCKER_DRIVER: overlay2
         BUILDER_NAME: multiarch-$CI_JOB_ID
