@@ -2,7 +2,6 @@
 
 namespace Kata\Tests;
 
-use SetupTest;
 use PHPUnit\Framework\TestCase;
 
 class Test extends TestCase
@@ -11,4 +10,10 @@ class Test extends TestCase
     {
         self::assertTrue(false);
     }
+    
+    public function testanotherTest(): void
+    {
+        self::assertTrue('Never trust a test you did not see failing');
+    }
+    
 }
