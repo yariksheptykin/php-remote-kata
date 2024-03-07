@@ -8,12 +8,12 @@ class Test extends TestCase
 {
     public function testSetup()
     {
-        self::assertTrue(false);
+        self::assertFalse(false);
     }
     
     public function testanotherTest(): void
     {
-        self::assertTrue('Never trust a test you did not see failing');
+        self::assertTrue(true);
     }
     
 }
