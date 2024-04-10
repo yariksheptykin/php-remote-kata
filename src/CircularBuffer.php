@@ -21,7 +21,7 @@ final class CircularBuffer
     }
 
     public function take() : int
-    { 
-        return reset($this->buffer);
+    {
+        return array_shift($this->buffer);
     }
 }

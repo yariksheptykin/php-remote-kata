@@ -49,6 +49,16 @@ class CircularBufferTest extends TestCase
         
         self::assertSame(6, $this->circularBuffer->take());
     }
+
+    #[Test]
+    public function addOneMoreElementThanSize(): void
+        {
+            $this->circularBuffer->add(1);
+            $this->circularBuffer->add(2);
+            $this->circularBuffer->add(3);
+            $this->circularBuffer->add(4);
+            self::assertSame(2, $this->circularBuffer->take());
+        }
     
     
 }
