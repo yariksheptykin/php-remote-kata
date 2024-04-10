@@ -2,9 +2,11 @@
 
 namespace Kata;
 
-final readonly class CircularBuffer
+final class CircularBuffer
 {
-    public function __construct(private int $buffersize)
+    private array $buffer = [];
+
+    public function __construct(readonly private int $buffersize)
     {
     }
 
@@ -13,13 +15,13 @@ final readonly class CircularBuffer
         return $this->buffersize;
     }
 
-    public function add(int $someItem) : void
+    public function add(int $item) : void
     {
-        
+        $this->buffer[] = $item;
     }
 
     public function take() : int
     { 
-        return 7;
+        return reset($this->buffer);
     }
 }

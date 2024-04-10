@@ -1,12 +1,11 @@
 <?php
+declare(strict_types=1);
 
 namespace Kata\Tests;
 
-use http\Env\Request;
 use Kata\CircularBuffer;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use function PHPUnit\Framework\assertSame;
 
 class CircularBufferTest extends TestCase
 {
@@ -22,8 +21,6 @@ class CircularBufferTest extends TestCase
 
     #[Test]
     public function circularBufferIsCreated() {
-        
-
         self::assertSame($this->buffersize, $this->circularBuffer->getSize());
     }
 
@@ -43,7 +40,15 @@ class CircularBufferTest extends TestCase
         $this->circularBuffer->add(6);
         self::assertSame(5, $this->circularBuffer->take());
     }
-    
+    #[Test]
+    public function takeDeletesFirstElementOfMultiple(): void
+    {
+        $this->circularBuffer->add(5);
+        $this->circularBuffer->add(6);
+        $this->circularBuffer->take();
+        
+        self::assertSame(6, $this->circularBuffer->take());
+    }
     
     
 }
