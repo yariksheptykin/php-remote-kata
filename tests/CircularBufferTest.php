@@ -20,7 +20,8 @@ class CircularBufferTest extends TestCase
 
 
     #[Test]
-    public function circularBufferIsCreated() {
+    public function circularBufferIsCreated()
+    {
         self::assertSame($this->buffersize, $this->circularBuffer->getSize());
     }
 
@@ -40,25 +41,35 @@ class CircularBufferTest extends TestCase
         $this->circularBuffer->add(6);
         self::assertSame(5, $this->circularBuffer->take());
     }
+
     #[Test]
     public function takeDeletesFirstElementOfMultiple(): void
     {
         $this->circularBuffer->add(5);
         $this->circularBuffer->add(6);
         $this->circularBuffer->take();
-        
+
         self::assertSame(6, $this->circularBuffer->take());
     }
 
     #[Test]
     public function addOneMoreElementThanSize(): void
-        {
-            $this->circularBuffer->add(1);
-            $this->circularBuffer->add(2);
-            $this->circularBuffer->add(3);
-            $this->circularBuffer->add(4);
-            self::assertSame(2, $this->circularBuffer->take());
-        }
-    
-    
+    {
+        $this->circularBuffer->add(1);
+        $this->circularBuffer->add(2);
+        $this->circularBuffer->add(3);
+        $this->circularBuffer->add(4);
+
+        self::assertSame(2, $this->circularBuffer->take());
+    }
+
+    #[Test]
+    public function countReturnsNumberOfItemsInBuffer(): void
+    {
+        $this->circularBuffer->add(99);
+        $this->circularBuffer->add(100);
+        
+        self::assertSame(2, $this->circularBuffer->count());
+    }
+
 }

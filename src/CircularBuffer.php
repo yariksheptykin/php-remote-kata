@@ -18,10 +18,18 @@ final class CircularBuffer
     public function add(int $item) : void
     {
         $this->buffer[] = $item;
+        if ($this->isBufferFull()) {
+            $this->take();
+        }
     }
 
     public function take() : int
     {
         return array_shift($this->buffer);
+    }
+
+    private function isBufferFull(): bool
+    {
+        return count($this->buffer) > $this->buffersize;
     }
 }
