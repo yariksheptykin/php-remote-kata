@@ -12,4 +12,14 @@ final readonly class CircularBuffer
     {
         return $this->buffersize;
     }
+
+    public function add(int $someItem) : void
+    {
+        
+    }
+
+    public function take() : int
+    { 
+        return 7;
+    }
 }
