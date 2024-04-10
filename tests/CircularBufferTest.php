@@ -9,9 +9,10 @@ class CircularBufferTest extends TestCase
     private $circularBuffer;
 
     public function testCircularBufferIsCreated() {
-        $buffersize = 3;
+        $buffersize = 5;
         $this->circularBuffer = new \Kata\CircularBuffer( $buffersize);
         self::assertSame($buffersize, $this->circularBuffer->getSize());
+        
 
     }
 
