@@ -7,39 +7,39 @@ use PHPUnit\Framework\TestCase;
 
 class CircularBufferTest extends TestCase
 {
-    public function testInstantiateCircularBuffer(): void
+    private CircularBuffer $circularBuffer;
+
+    public function setUp(): void
     {
-        self::assertInstanceOf(CircularBuffer::class, new CircularBuffer(3));
+        $this->circularBuffer = new CircularBuffer(3);
+        
+        parent::setUp();
     }
 
-    public function testCircularBufferSize(): void
+    public function testAddMultipleElementsToBuffer(): void
     {
-        $size = 5;
-        $circularBuffer = new CircularBuffer($size);
-
-        self::assertEquals($size, $circularBuffer->Size());
+        $this->circularBuffer->add(2);
+        $this->circularBuffer->add(3);
+        
+        self::assertSame(2, $this->circularBuffer->take());
+        self::assertSame(3, $this->circularBuffer->take());
     }
-
-    /**
-     * @test
-     */
-    public function testAddElementToCircularBuffer(): void
+    
+    public function testCountMultipleElementsToBuffer(): void
     {
-        $size = 5;
-        $circularBuffer = new CircularBuffer($size);
-        $circularBuffer->add(1);
-        self::assertSame(1, $circularBuffer->take());
+        $this->circularBuffer->add(2);
+        $this->circularBuffer->add(3);
+
+        self::assertSame(2, $this->circularBuffer->count());
     }
-
-    /**
-     * @test
-     */
-    public function testAddMultipleElementsToCircularBuffer(): void
+    
+    public function testAddMoreElementsThanCapacityOfBuffer(): void
     {
-        $size = 5;
-        $circularBuffer = new CircularBuffer($size);
-        $circularBuffer->add(1);
-        $circularBuffer->add(2);
-        self::assertSame(2, $circularBuffer->take());
+        $this->circularBuffer->add(1);
+        $this->circularBuffer->add(2);
+        $this->circularBuffer->add(3);
+        $this->circularBuffer->add(4);
+        
+        self::assertSame(2, $this->circularBuffer->take());
     }
 }

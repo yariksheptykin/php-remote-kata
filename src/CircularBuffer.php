@@ -4,24 +4,28 @@ namespace Kata;
 
 class CircularBuffer
 {
-    public function __construct(
-        protected int $size,
-        private array $buffer = []
-    ) {
+    private array $buffer = [];
+
+    public function __construct(private readonly int $size)
+    {
     }
 
-    public function Size(): int
+    public function add(int $element): void
     {
-        return $this->size;
+        if (count($this->buffer) === $this->size) {
+            $this->take();
+        }
+        
+        $this->buffer[] = $element;
     }
 
-    public function add(int $int): void
+    public function take(): int
     {
-        $this->buffer[] = $int;
+        return array_shift($this->buffer);
     }
 
-    public function take()
+    public function count(): int
     {
-        return $this->buffer;
+        return count($this->buffer);
     }
 }
