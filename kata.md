@@ -1,7 +1,11 @@
-Hangman
-Class Kata “Hangman”
+# Hangman
 
-Write a class of Hangman. The instance receives the searched word as a string via the constructor. The class also has a GuessLetter method. The method receives a character as input and checks where the character occurs within the searched word. The method returns the part of the word guessed up to that point.
+## Class Kata “Hangman”
+
+Write a class of Hangman. 
+The instance receives the searched word as a string via the constructor. 
+The class also has a GuessLetter method. The method receives a character as input and checks where the character occurs within the searched word. 
+The method returns the part of the word guessed up to that point.
 
 ```php
 public class Hangman {
