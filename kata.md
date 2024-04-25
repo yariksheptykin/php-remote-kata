@@ -18,14 +18,14 @@ The following table shows the process using an example.
 
 | Method      | input | output    |
 |-------------|-------|-----------|
-| ctor        | Developer |       |
-| GuessLetter | u | --------- |
-| GuessLetter | e  | -e-e---e- |
-| GuessLetter | n  | -e-e---e- |
-| GuessLetter | o  | -e-e-o-e- |
-| GuessLetter | r  | -e-e-o-er |
-| GuessLetter | a  | -e-e-o-er |
-| GuessLetter | d  | De-e-o-er |
-| GuessLetter | l  | De-elo-er |
-| GuessLetter | p  | De-eloper |
-| GuessLetter | v  | Developer |
+| construct   | 'Developer' |       |
+| guessLetter | 'u' | '---------' |
+| guessLetter | 'e'  | '-e-e---e-' |
+| guessLetter | 'n'  | '-e-e---e-' |
+| guessLetter | 'o'  | '-e-e-o-e-' |
+| guessLetter | 'r'  | '-e-e-o-er' |
+| guessLetter | 'a'  | '-e-e-o-er' |
+| guessLetter | 'd'  | 'De-e-o-er' |
+| guessLetter | 'l'  | 'De-elo-er' |
+| guessLetter | 'p'  | 'De-eloper' |
+| guessLetter | 'v'  | 'Developer' |
